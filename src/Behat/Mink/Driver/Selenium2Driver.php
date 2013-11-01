@@ -1006,4 +1006,44 @@ JS;
     public function getDesiredCapabilities() {
         return $this->desiredCapabilities;
     }
+
+    /**
+     * Returns an array with the size of the element.
+     *
+     * @param string $xpath Xpath.
+     *
+     * @return array
+     */
+    public function getSize($xpath)
+    {
+        return $this->wdSession->element('xpath', $xpath)->getSize();
+    }
+
+    /**
+     * Returns an array with the top left position of the element.
+     *
+     * @param string $xpath Xpath.
+     *
+     * @return array
+     */
+    public function getLocation($xpath)
+    {
+        return $this->wdSession->element('xpath', $xpath)->getLocation();
+    }
+
+    /**
+     * Returns the value of the css property of the element.
+     *
+     * Added by stefan
+     *
+     * @param   string $xpath Xpath.
+     * @param   string $property  Css property.
+     *
+     * @return array
+     */
+    public function getCssValue($xpath, $property)
+    {
+        return $this->wdSession->element('xpath', $xpath)->getCss($property);
+    }
+
 }
