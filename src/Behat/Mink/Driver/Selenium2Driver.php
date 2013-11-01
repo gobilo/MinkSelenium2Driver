@@ -997,4 +997,13 @@ JS;
     {
         return $this->wdSession->window($name ? $name : 'current')->postMaximize();
     }
+
+    /**
+     * Returns desiredCapabilities.
+     *
+     * @return array
+     */
+    public function getDesiredCapabilities() {
+        return $this->desiredCapabilities;
+    }
 }
