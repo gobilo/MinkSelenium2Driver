@@ -1034,8 +1034,6 @@ JS;
     /**
      * Returns the value of the css property of the element.
      *
-     * Added by stefan
-     *
      * @param   string $xpath Xpath.
      * @param   string $property  Css property.
      *
@@ -1044,6 +1042,16 @@ JS;
     public function getCssValue($xpath, $property)
     {
         return $this->wdSession->element('xpath', $xpath)->getCss($property);
+    }
+
+    /**
+     * Returns the title.
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->wdSession->getTitle();
     }
 
 }
